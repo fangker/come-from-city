@@ -1,0 +1,15 @@
+
+/db  数据库模型
+dbset.js(redis及mysql配置)——数据库配置文件
+index.js(模型层出口文件)——导出出口包含mysqlquery及redis
+mysql.js(mysql模块的query连接池封装)——mysql ORM 封装
+redis.js(redis 模块 client 导出)——redis ORM 封装
+/redis 3 用户
+/redis 4 司机
+/redis 2 城市表
+/redis 1 车队表
+/ewdis 5 车队配置
+/  对象模型
+user.js
+fleet.js
+driver.js

@@ -1,0 +1,104 @@
+extends menu
+block title
+    title 设置路线
+block content1
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/style_h.css')
+        link(rel='stylesheet', href='/css/bootstrap-table.css')
+        div#option-table
+            h3 设置路线
+                button.pull-right.btn.btn-primary(type="button",v-on:click="addOption") 添加
+            div
+                //| {{ optionData | json }}
+                table.table.table-striped.table-bordered
+                    thead
+                        tr
+                            th 路线ID
+                            th 出发城市
+                            th 终点城市
+                            th 价格
+                            th 超标价格
+                            th 距离
+                            th 操作
+                    tbody(v-cloak)
+                        tr(v-for="item in optionData")
+                            td {{item.signId}}
+                            td {{item.startCity}}
+                            td {{item.endCity}}
+                            td {{item.cityCost}}
+                            td {{item.cityRecost}}
+                            td {{item.distance}}
+                            td
+                                a(href="javascript:void(0)",v-on:click='deleteOption(item)') 删除
+            if message
+                .alert.alert-success(role='alert') | #{message}
+
+            div(style="height:0;overflow:hidden;")
+                div.layer-alert-container
+                    div.layer-alert-content
+                        h2 增加
+                        form(action="/newroute",method="post",role="form")
+                            .form-group
+                                label(for="startCity") 出发城市
+                                input#startCity.form-control(type="text",name="startcity")
+                            .form-group
+                                label(for="endCity") 终点城市
+                                input#endCity.form-control(type="text",name="endcity")
+                            .form-group
+                                label(for="cityCost") 价格
+                                input#cityCost.form-control(type="text",name="citycost")
+                            .form-group
+                                label(for="cityRecost") 超标价格
+                                input#cityRecost.form-control(type="text",name="cityrecost")
+                            .form-group
+                                label(for="distance") 距离
+                                input#distance.form-control(type="text",name="distance")
+                            button.btn.btn-default(type="submit") 提交
+
+        script(src="/js/vue.js")
+        script(src="/js/jquery-1.12.0.min.js")
+        script(src="/js/bootstrap.js")
+        script(src="/js/layer/layer.js")
+        script.
+            var data = !{JSON.stringify(data)};
+            console.log(data);
+            var vm = new Vue({
+                el : '#option-table',
+                data : {
+                    optionData : data,
+                    filterText : "",
+                    status : ""
+                },
+                methods : {
+                    deleteOption: function(item){
+                        var self = this;
+                        layer.confirm('确认删除该路线？', {
+                            btn: ['确认', '取消'] //按钮
+                        }, function () {
+                            $.post("/fleet/route",{
+                                route : item.signId
+                            },function(data){
+                                console.log(data);
+                                if(data.status){
+                                    layer.msg("删除成功");
+                                    window.location.reload()
+                                    self.memberData.splice(self.memberData.indexOf(item),1);
+                                }else{
+                                    layer.msg("删除失败")
+                                }
+                            },"json");
+                        });
+                    },
+                    addOption(){
+                        layer.open({
+                            type      : 1,
+                            shadeClose: true,
+                            move      : false,
+                            skin      : 'layui-layer-rim', //加上边框
+                            area      : ['600px', '480px'], //宽高
+                            title     : '详细订单信息',
+                            content   : $(".layer-alert-container")
+                        });
+                    }
+                }
+            });

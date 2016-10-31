@@ -1,0 +1,433 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title QandA
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+        link(rel='stylesheet', type='text/css', href='css/jiekou.css')
+    body
+        .container
+            .menu
+                h3
+                    i.q-menu-img.positionIicon
+                    | 快速上手
+                ul.ulmenu1
+                    li
+                        a.selected(href='#tab1') 使用说明
+                h3
+                    i.q-menu-doit.positionIicon
+                    | 订单接口
+                ul.ulmenu2
+                    li
+                        a.selected(href='#') 所有订单接口
+                h3
+                    i.q-menu-three.positionIicon
+                    | 推送接口
+                ul.ulmenu3
+                    li
+                        a.selected(href='#tab1') 所有推送接口
+            .content
+                .get-menu
+                    a(href='#') 城来城往
+                    span >
+                    a.A1(href='#') 使用说明
+                .menu1.menu_tab
+                    #tab1.tab.active
+                        p(style='background:#eee;padding-top:10px;padding-bottom:10px;padding-left:20px;font-weight:bold;')
+                            URI API v2.0
+                        p(align='left' style='line-height:20px;padding-left:20px;')
+                            | 通过城来城往开方接口，车队可以根据自己的需求开发本地的软件方便进行日常的管理。以满足特定业务场景下应用需求的程序接口，开发者只需按照接口规范构造一条标准的URI，便可在PC和移动端浏览器或移动开发应用中调起城来城往服务，进行地图展示和检索、线路查询、人员管理、公告发布等功能，无需进行复杂的本地平台功能开发。
+                        p(align='center')
+                            img(src='img/tuisong.png')
+                .menu2.menu_tab
+                    #tab-2-1.tab
+                        p.tt 1.司机订单关闭
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/oder/fleet  delete方法
+                                正确请求{
+                                “order”:”856248621”
+                                }
+                          
+                        p.tt 2.司机订单查看
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/driver/order/info&driver=’1565532’&key=’5556254’ GET方法
+                                正确响应{
+                                "status": "success",
+                                “order_id”:155233
+                                data:[{
+                                 \tuserphone:”15552265212”,
+                                 \tprice:”99”,
+                                 \tstart_time:2016-5-23 6:00,
+                                 \tpointA:””,
+                                 \tpointB:””
+                                ]
+                                }
+                          
+                        p.tt 3.司机获取临时订单具体信息
+                        p(align='left')
+                            pre.
+                                \nURL:localhost:3000/api/fleet/order/temorder?v_key=sddg4554df4df4sd25524frfscx&phonenum=15634172739&key=0&orderid=12266321  GET方法
+                                正确响应:
+                                {
+                                  "error": 0,
+                                  "status": "success",
+                                  "data": [
+                                    {
+                                      "price": 23,
+                                      "endTime": "2016-09-04T03:29:04.000Z",
+                                      "createTime": "2016-07-15T02:56:23.000Z",
+                                      "userPhone": "15964521792",
+                                      "startCity": "章丘市",
+                                      "endCity": "济南市"
+                                    },
+                                    {
+                                      "price": 11,
+                                      "endTime": "2016-09-07T05:21:10.000Z",
+                                      "createTime": "2016-07-15T03:02:12.000Z",
+                                      "userPhone": "15964521794",
+                                      "startCity": "章丘市",
+                                      "endCity": "济南市"
+                                    },
+                                    {
+                                      "price": 22,
+                                      "endTime": null,
+                                      "createTime": "2016-07-15T03:05:31.000Z",
+                                      "userPhone": "15964521795",
+                                      "startCity": "济南市",
+                                      "endCity": "章丘市"
+                                    }
+                                  ]
+                                }
+                          
+                        p.tt 4.司机补充注册信息
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/driver/situation?v_key=sddg4554df4df4sd25524frfscx&phonenum=15634172739&fleetid=1 GET方法
+                                正确请求{
+                                "error":0,
+                                "status":
+                                "success",
+                                "data":{
+                                \t"situation":"online"
+                                \t}
+                                }
+                          
+                        p.tt 5.更改司机在线状态
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/driver/situation GET方法
+                                正确请求{
+                                "situation":"online",
+                                "key": "0",
+                                "v_key":"sddg4554df4df4sd25524frfscx",
+                                "fleetid":"1",
+                                "phonenum":"15634172739"
+                                }
+                          
+                        p.tt 6.司机提交加入车队申请
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/fleet/application POST方法
+                                正确请求{
+                                "v_key":"sddg4554df4df4sd25524frfscx",
+                                "phonenum":"15552296798",
+                                "key":"0",
+                                "fleetid":"1"
+                                }
+                          
+                        p.tt 7.司机返回个人申请信息
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/fleet/application?key=0&phonenum=15264335526&v_key=sddg4554df4df4sd25524frfscx GET方法
+                                正确请求
+                                {
+                                "v_key":"sddg4554df4df4sd25524frfscx",
+                                "phonenum":"15552296798",
+                                "key":"0",
+                                "fleetid":"1"
+                                }
+                          
+                        p.tt 8.司机拒绝订单
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/driver/order/reject  PUT方法
+                                正确请求
+                                {
+                                "phonenum": "13181726619",
+                                "key":"0",
+                                "v_key":"sddg4554df4df4sd25524frfscx" ,
+                                "orderid":"10000000"
+                                }
+                          
+                        p.tt 9.司机接受订单
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/driver/order/resolve  PUT方法
+                                正确请求
+                                {
+                                "phonenum": "13181726619",
+                                "key":"0",
+                                "v_key":"sddg4554df4df4sd25524frfscx" ,
+                                "orderid":"10000000"
+                                }
+                          
+                        p.tt 10.乘客提交订单
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/order/constructor POST方法
+                                正确请求{
+                                "userphone": "13053969177",
+                                "startcity": "370181",
+                                "endcity": "370600",
+                                "fleetid": "1001",
+                                "key": "0",
+                                "v_key":"sddg4554df4df4sd25524frfscx",
+                                "couponcode": "dfdfd",
+                                "distance": "55",
+                                "starttime": "2016-07-14 21:58:57",
+                                "startposition": "196.565526,136.24552254",
+                                "endposition": "123.5455,139.15524",
+                                "startaddress":"章丘双山东路888号",
+                                "endaddress":"德州从林路211号",
+                                "people":"2",
+                                "notes":"222222333333333"
+                                }
+                          
+                        p.tt 11.乘客个人订单查询
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/order/constructor POST方法
+                                正确响应 {
+                                “status”:success
+                                “data”:[{
+                                      "start_city ": "章丘",
+                                      "end_city ": "济南",
+                                      "create_time":"2015-4-26 8:00",
+                                      "start_time  ":2015-4-26 9:00,
+                                      "end_time": 2015-4-26 14:00,
+                                      "starting": 2015-4-26 14:00,
+                                      "distance":96,
+                                      "price": 62.35,
+                                      "fleet_id": 15234352,
+                                      "fleet_name": “极速车队”,
+                                      “tem_order”:”1556255”,
+                                      “order_usercredit”:”5”,
+                                      “order_usercomment”:”很好，很好，非常好”
+                                }
+                                ]
+                                }
+                          
+                        p.tt 12.车队管理单个用户订单
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/oder   PUT方法
+                                正确请求{
+                                “tem_id”:”153256352”,
+                                “option”:”reject”,
+                                “key”:”0.26585455”
+                                }
+                          
+                        p.tt 13.车队管理订单重分配
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/oder/fleetreconstructor  PUT
+                                正确请求{
+                                “tem_id”:”153256352”,
+                                “option”:”reject”,
+                                “key”:”0.26585455”
+                                }
+                          
+                        p.tt 14.车队管理获取拼车单信息
+                        p(align='left')
+                            pre.
+                                \nURL:localhost:3000/api/driver/fleet/order?v_key=sddg4554df4df4sd25524frfscx&phonenum=15634172739&key=0&start=0&end=1  GET方法
+                                正确请求{
+                                “oder_id”:”153256352”,
+                                “option”:”rebuild”,
+                                “key”:”0.26585455”,
+                                }
+                          
+                        p.tt 15.车队管理分配订单
+                        p(align='left')
+                            pre.
+                                \nURL:localhost:3000/api/driver/fleet/order?v_key=sddg4554df4df4sd25524frfscx&phonenum=15634172739&key=0&start=0&end=1  GET方法
+                                正确请求{
+                                {
+                                "phonenum": "13181726619",
+                                "key":"0",
+                                "drivernum":"18765837069",
+                                "v_key":"sddg4554df4df4sd25524frfscx",
+                                "array":"[100000004,100000005]",
+                                "fleetid":"1001"
+                                }
+                          
+                        p.tt 16.车队管理更改订单
+                        p(align='left')
+                            pre.
+                                \nURL://localhost:3000/api/fleet/tmporder   PUT方法
+                                正确请求{
+                                {
+                                "phonenum": "13181726619",
+                                "key":"0",
+                                "v_key":"sddg4554df4df4sd25524frfscx" ,
+                                "temid":"1000212"
+                                }
+                          
+                .menu3.menu_tab
+                    #tab-3-1.tab
+                        p.tt 1.乘客获取司机信息
+                        p(align='left')
+                            pre.
+                                \nURL: http://localhost:3000/api/feelt GET方法
+                                正确请求{
+                                "status": "success",
+                                "data": [
+                                    {
+                                      "fleet_id": 10000,
+                                      "fleet_name": "灵车漂移",
+                                      "fleet_info": "是的撒打算打算打算打算",
+                                      "sign_id": 100000000,
+                                      "start_city": 370100,
+                                      "end_city": 370181,
+                                      "city_tab": 0,
+                                      "city_cost": 12,
+                                      "city_recost": 18,
+                                      "default_distance": 200
+                                    }
+                                  ],
+                                "num": 1
+                                }
+                          
+                        p.tt 2.用户评论提交
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/odercomment   POST方法
+                                正确请求{
+                                "key":"0",
+                                "order":"100000083",
+                                "comment":"这是我的相关评论",
+                                "v_key":"sddg4554df4df4sd25524frfscx",
+                                "drivernum":"15264335526",
+                                "thisphonenum":"15264335526",
+                                "credit":"3"
+                                }
+                          
+                        p.tt 3.用户获取当前位置车队信息
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/usercos/fleet/thisposition?startpoint=370100&v_key=sddg4554df4df4sd25524frfscx&start=0&end=10   PUT方法
+                                正确响应:{
+                                  "error": 0,
+                                  "status": "success",
+                                  "data": [
+                                    {
+                                      "fleetId": 1,
+                                      "fleetName": "济章车队",
+                                      "fleetInfo": "欢迎加入济章车队，我们欢迎每一位司机师傅",
+                                      "fleetCredit": 0,
+                                      "fleetPhone": null,
+                                      "route": [
+                                        {
+                                          "startCity": "济南市",
+                                          "endCity": "章丘市",
+                                          "cityCost": 12,
+                                          "cityRecost": 15,
+                                          "defaultDistance": 150
+                                        },
+                                        {
+                                          "startCity": "秦皇岛市",
+                                          "endCity": "济南市",
+                                          "cityCost": 12,
+                                          "cityRecost": 15,
+                                          "defaultDistance": 150
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "fleetId": 2,
+                                      "fleetName": "任舸车队",
+                                      "fleetInfo": "欢迎来到任舸车队",
+                                      "fleetCredit": 0,
+                                      "fleetPhone": null,
+                                      "route": [
+                                        {
+                                          "startCity": "济南市",
+                                          "endCity": "章丘市",
+                                          "cityCost": 12,
+                                          "cityRecost": 15,
+                                          "defaultDistance": 150
+                                        },
+                                        {
+                                          "startCity": "章丘市",
+                                          "endCity": "济南市",
+                                          "cityCost": 12,
+                                          "cityRecost": 15,
+                                          "defaultDistance": 150
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "fleetId": 10007,
+                                      "fleetName": "水车队",
+                                      "fleetInfo": "欢迎进入水车队",
+                                      "fleetCredit": 0,
+                                      "fleetPhone": null,
+                                      "route": [
+                                        {
+                                          "startCity": "济南市",
+                                          "endCity": "章丘市",
+                                          "cityCost": 5,
+                                          "cityRecost": 12,
+                                          "defaultDistance": 150
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                          
+                        p.tt 4.用户获取自身信息
+                        p(align='left')
+                            pre.
+                                \nURL:localhost:3000/api/usercos/information?userphone=18765837069&key=ee4008f598d838179eee99a616ea500d&v_key=sddg4554df4df4sd25524frfscx   GET方法
+                                正确响应
+                                {
+                                  "status": "success",
+                                  "data": {
+                                    "info": {
+                                      "userPhone": "18765837069",
+                                      "userName": "孙旭",
+                                      "userState": 0,
+                                      "points": 0,
+                                      "userMoney": 85,
+                                      "userPhoto": null
+                                    }
+                                  }
+                                }
+                          
+                        p.tt 5.用户获得coupon
+                        p(align='left')
+                            pre.
+                                \nURL:http://localhost:3000/api/coupon  POST方法
+                                正确响应
+                                {
+                                "phonenum": "13181726619",
+                                "key":"0",
+                                "v_key":"sddg4554df4df4sd25524frfscx"
+                                }
+                          
+                        p.tt 6.车队管理发布布告栏
+                        p(align='left')
+                            pre.
+                                \nURL://localhost:3000/api/fleet/notice   POST方法
+                                正确请求{
+                                {
+                                "phonenum": "13181726619",
+                                "key":"0",
+                                "v_key":"sddg4554df4df4sd25524frfscx" ,
+                                "notice":"100000055"
+                                }
+                          
+    script(src='js/jquery_lastest.js')
+    script(type='text/javascript', src='js/jiekou.js')

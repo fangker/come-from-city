@@ -1,0 +1,103 @@
+extends menu
+block content1
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/style_h.css')
+        link(rel='stylesheet', href='/css/bootstrap-table.css')
+        div#order-table
+            ul.nav.nav-tabs.col-md-12.text-center.order-table-nav
+                li.col-md-4(:class="{'active':status==''}")
+                    p(v-on:click="setStatus('')") 已生成的订单
+                li.col-md-4(:class="{'active':status=='1'}")
+                    p(v-on:click="setStatus(1)") 正在进行订单
+                li.col-md-4(:class="{'active':status=='2'}")
+                    p(v-on:click="setStatus(2)") 已完成的订单
+
+            div.row
+                div.col-xs-4.pull-right
+                    p
+                        input.form-control(type="text",id="exampleInputEmail1",placeholder="输入司机电话号码以筛选" v-model='filterText')
+            div
+                table.table.table-striped.table-bordered
+                    thead
+                        tr
+                            th 订单编号
+                            th 接单司机
+                            th 订单开始时间
+                            th 订单结束时间
+                            th 编辑
+                    tbody(v-cloak)
+                        tr(v-for="item in orderData | filterBy filterText in 'driverPhone' | filterBy status in 'status'")
+                            td {{item.orderId}}
+                            td {{item.driverPhone}}
+                            td {{item.startTime}}
+                            td {{item.endTime}}
+                            td
+                                a(href="javascript:void(0)",v-on:click='showDetail(item.orderId)') 查看详情
+
+        //div.layer-alert-container
+            div.layer-alert-content
+                h3 $startCity$ -> $endCity$
+                table.table.table-bordered.table-hover
+                    thead
+                        tr
+                            th 用户手机号
+                            th 订单结束时间
+                            th 价格
+                            th 人数
+                    tbody
+                        tr
+                            td 用户手机号: $userPhone$
+                            td 上车时间: $starting$
+                            td 价格: $price$
+                            td 人数: $people$
+
+        script(src="/js/vue.js")
+        script(src="/js/jquery-1.12.0.min.js")
+        script(src="/js/bootstrap.js")
+        script(src="/js/layer/layer.js")
+        script.
+            var data = !{JSON.stringify(data)};
+            console.log(data);
+            var vm = new Vue({
+                el : '#order-table',
+                data : {
+                    orderData : data,
+                    filterText : "",
+                    status : ""
+                },
+                methods : {
+                    showDetail : function(orderId){
+                        $.get('/fleet/order/temorder?orderid='+orderId,function(data){
+                            console.log(data);
+                            var containerHTML = `<div class="layer-alert-container"><div class="layer-alert-content"><h3>$startCity$ -&gt; $endCity$</h3><table class="table table-bordered table-hover"><thead><tr><th>用户手机号</th><th>上车时间</th><th>价格</th><th>人数</th></tr></thead><tbody>$tbody$</tbody></table></div></div>`;
+                            var contentHTML = `<tr><td>$userPhone$</td><td>$starting$</td><td>$price$</td><td>$people$</td></tr>`;
+                            var content = "";
+                            data.forEach(function(item){
+                                content+=
+                                        contentHTML
+                                                .replace("$userPhone$",item.userPhone)
+                                                .replace("$starting$",item.starting)
+                                                .replace("$price$",item.price)
+                                                .replace("$people$",item.people);
+                            })
+                            containerHTML = containerHTML
+                                    .replace("$startCity$",data[0].startCity)
+                                    .replace("$endCity$",data[0].endCity)
+                                    .replace("$tbody$",content);
+                            layer.open({
+                                type   : 1,
+                                shadeClose : true,
+                                move : false,
+                                skin   : 'layui-layer-rim', //加上边框
+                                area   : ['600px', '480px'], //宽高
+                                title  : '详细订单信息',
+                                content: containerHTML
+                            });
+                        })
+                        //layer.msg(orderId);
+                    },
+                    setStatus : function(status){
+                        this.status = status;
+                    }
+                }
+            });

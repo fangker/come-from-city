@@ -1,0 +1,34 @@
+extends menu
+block content1
+    section#create_fleet
+        .container
+            .row
+                .col-md-2
+                .col-md-6
+                    .col-md-10.col-md-offset-2.text-center
+                        h2 车队信息设置
+                        hr
+            .row
+                .col-md-2
+                .col-md-6
+                    form.form-horizontal(action='/createfleet', method='post')
+                        .form-group
+                            label.col-md-2.control-label(for='fleet_name') 车队名称
+                            .col-md-10
+                                input#fleet_name.form-control(type='text', placeholder='请输入车队名称', name='fleetname')
+                        .form-group
+                            label.col-md-2.control-label(for='fleet_phone') 联系电话
+                            .col-md-10
+                                input#fleet_phone.form-control(type='text', placeholder='请输入联系人电话', name='fleetphone')
+                        .form-group
+                            label.col-md-2.control-label(for='fleet_info') 车队介绍
+                            .col-md-10
+                                textarea#fleet_info.form-control(placeholder='请输入车队介绍', rows='4', name='fleetinfo')
+                            .col-md-10.col-md-offset-2
+                                input.form-control.btn.btn-info(type='submit', value='创 建 车 队')
+                .col-md-2
+    script(type='text/javascript', src='js/jquery.js')
+    script(type='text/javascript', src='js/bootstrap.min.js')
+
+
+

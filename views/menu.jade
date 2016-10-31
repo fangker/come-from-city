@@ -1,0 +1,48 @@
+include  header
+block content
+body
+
+    section.myInfo
+        .container
+            .row
+                .col-md-2
+                    div
+                        a.text-center.iden(href='/createfleet') 我的信息
+                        myList.list-group.text-center
+                        a.list-group-item(href='/profile',id='profile') 个人信息
+                        a.list-group-item(href='/myfleet',id='myfleet') 我的车队
+                      if(admin==true)
+                        a.list-group-item(href='/fleet/member',id='member') 成员列表
+                        a.list-group-item(href='/fleet/option',id='option') 路线设置
+                        a.list-group-item(href='/fleet/order',id='order') 订单查看
+                .col-md-10
+                    block content1
+
+        script.
+            $(document).on('ready', function () {
+                var url = document.URL.toLowerCase(); //获取url地址，并全部小写化
+                if (url.indexOf("/myfleet".toLowerCase()) != -1) {
+                    $('.myInfo .list-group').find('a').removeClass('active');
+                    $("#myfleet").addClass("active");
+                }
+                else if (url.indexOf("/profile".toLowerCase()) != -1) {
+                    $('.myInfo .list-group').find('a').removeClass('active');
+                    $("#profile").addClass("active");
+                }else if (url.indexOf("/fleet/member".toLowerCase()) != -1){
+                    $('.myInfo .list-group').find('a').removeClass('active');
+                    $("#member").addClass("active");
+                }else if  (url.indexOf("/fleet/option".toLowerCase()) != -1){
+                    $('.myInfo .list-group').find('a').removeClass('active');
+                    $("#option").addClass("active");
+                }
+                else {
+                    $('.myInfo .list-group').find('a').removeClass('active');
+                    $("#order").addClass("active"); //若包含则给ID为MenuProducts加上CSS样式UrlSiteNow
+                }
+                $('.myInfo .list-group').find('a').click(function () {
+                    $('.myInfo .list-group').find('a').removeClass('active');
+                    $(this).addClass('active');
+                });
+            })
+
+include driverfoot

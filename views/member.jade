@@ -1,0 +1,83 @@
+extends menu
+block title
+    title 成员信息
+block content1
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/style_h.css')
+        link(rel='stylesheet', href='/css/bootstrap-table.css')
+        div#member-table
+            //div.row
+                div.col-xs-4.pull-right
+                    p
+                        input.form-control(type="text",id="exampleInputEmail1",placeholder="输入司机电话号码以筛选" v-model='filterText')
+            h3 成员信息
+            div
+                table.table.table-striped.table-bordered
+                    thead
+                        tr
+                            th 姓名
+                            th 性别
+                            th 车牌
+                            th 信誉
+                            th 手机号码
+                            th 操作
+                    tbody(v-cloak)
+                        tr(v-for="item in memberData")
+                            td {{item.driverName}}
+                            td {{item.sex==1?'男':'女'}}
+                            td {{item.driverNumber}}
+                            td {{item.evaluate}}
+                            td {{item.driverPhone}}
+                            td
+                                a(href="javascript:void(0)",v-on:click='deleteMember(item)') 删除
+
+        //div.layer-alert-container
+            div.layer-alert-content
+                h3 $startCity$ -> $endCity$
+                table.table.table-bordered.table-hover
+                    thead
+                        tr
+                            th 用户手机号
+                            th 上车时间
+                            th 价格
+                            th 人数
+                    tbody
+                        tr
+                            td 用户手机号: $userPhone$
+                            td 上车时间: $starting$
+                            td 价格: $price$
+                            td 人数: $people$
+
+        script(src="/js/vue.js")
+        script(src="/js/jquery-1.12.0.min.js")
+        script(src="/js/bootstrap.js")
+        script(src="/js/layer/layer.js")
+        script.
+            var data = !{JSON.stringify(data)};
+            console.log(data);
+            var vm = new Vue({
+                el : '#member-table',
+                data : {
+                    memberData : data,
+                    filterText : "",
+                    status : ""
+                },
+                methods : {
+                    deleteMember : function(item){
+                        var self = this;
+                        layer.confirm('确认删除该成员？', {
+                            btn: ['确认', '取消'] //按钮
+                        }, function () {
+                            $.get("/del/member/"+item.driverPhone,function(data){
+                                console.log(data);
+                                if(data.status){
+                                    layer.msg("删除成功");
+                                    self.memberData.splice(self.memberData.indexOf(item),1);
+                                }else{
+                                    layer.msg("删除失败")
+                                }
+                            },"json");
+                        });
+                    }
+                }
+            });

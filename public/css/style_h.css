@@ -1,0 +1,312 @@
+body{
+	font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+	margin: 0px;
+	padding: 0px;
+}
+.display{
+	display: none;
+}
+/*导航*/
+#nav{
+	background: #FFFFFF;
+}
+.navbar-header a img{
+	width: 100px;
+}
+.navbar-toggle{
+	width: 45px;
+	height: 45px;
+	margin-top: 10px;
+}
+.navbar-brand{
+	padding: 10px;
+}
+.navbar-brand img{
+	width: 130px;
+	height: 54px;
+	padding: 0px;
+}
+.navbar-nav{
+	font-size: 18px;
+	padding: 15px;
+	padding-top: 12px;
+	background: #FFFFFF;
+}
+.navbar-nav li{
+	margin-right: 10px;
+}
+.navbar-default{
+	background: #fff;
+	border: none;
+	box-shadow: 0px 2px 8px 0px rgba(50,50,50,0.25);
+}
+.dropdown-menu{
+	font-size: 18px;
+}
+.dri_login{
+	padding-top: 0px;
+	width: 135px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+/*底部导航*/
+#footer .col-md-2 h3{
+	margin-bottom: 30px;
+}
+#footer .col-md-2 small{
+	display: block;
+	margin-bottom: 10px;
+	color: #CCCCCC;
+}
+#footer .col-md-2 p{
+	text-align: center;
+	word-wrap:break-word; word-break:break-all;
+}
+#footer .col-md-2 p a{
+	color: #CCCCCC;
+}
+#footer{
+	background: #222222;
+	color: #fff;
+	font-size: 16px; 
+	font-weight: 700;
+	padding-top: 40px;
+}
+#footer img{
+	width: 60%;
+	height: 60%;
+}
+#copyright{
+	margin-top: 20px;
+}
+#copyright p{
+	color: #CCCCCC;
+}
+/*创建车队*/
+#create_fleet{
+	padding-bottom: 50px;
+	font-size: 16px;
+}
+#create_fleet h2{
+	letter-spacing: 5px;
+}
+#create_fleet form .form-group{
+	margin-top: 50px;
+}
+#create_fleet form input[type=submit]{
+	font-size: 24px;
+	height: 50px;
+	margin-top: 50px;
+}
+/**/
+.myInfo{
+	margin-top: 200px;
+}
+.myInfo>.container>.row>.col-md-2{
+	padding: 0px;
+	margin-top: 80px;
+}
+.myInfo>.container>.row>.col-md-2>div{
+	background: #fbfcfc;
+	padding: 0px;
+	margin-bottom: 2px;
+}
+.myInfo .iden{
+	display: block;
+	line-height: 40px;
+	font-size: 22px;
+	border: none;
+	color: #000000;
+	padding:20px 0px 10px 0px;	
+	font-weight: bold;
+}
+.myInfo .list-group{
+	padding-bottom: 100px;
+	background: #fbfcfc;
+}
+.myInfo .list-group .list-group-item{
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+	border: none;
+	background: #fbfcfc;
+}
+#myList .active{
+	background: #f1f5f6;
+	border-left: 3px solid #77a0b5;
+	color: #000000;
+}
+.myInfo>.container>.row>.col-md-10 .list{
+	font-size: 18px;
+}
+.myInfo>.container>.row>.col-md-10 .list>.col-md-10{
+	border: 3px solid #f4f5f6;
+	padding: 40px 40px 100px 40px;
+}
+.myInfo>.container>.row>.col-md-10 .list>.col-md-10>p{
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+.myInfo>.container>.row>.col-md-10 .list>.col-md-10>p>b{
+	color: #E0E0E0;
+}
+
+.myInfo>.container>.row>.col-md-10 .list .col-md-10 ul li{
+	padding: 0px;
+	margin-bottom: 26px;
+	font-size: 16px;
+	color: #000;
+	list-style: none;
+	line-height: 30px;
+}
+.myInfo>.container>.row>.col-md-10 .list .col-md-10 ul li p{
+	text-indent: 2em;
+	border: 1px dotted #000;
+	padding: 18px;
+	margin-top: 20px;
+	border-radius: 20px;
+}
+.myInfo .form-group{
+	margin-top: 30px
+}
+.myInfo input[type=submit]{
+	margin-top: 30px;
+	height: 50px;
+	font-size: 24px;
+}
+/*创建车队*/
+#create_fleet{
+	margin-top: 100px;
+	padding-bottom: 50px;
+	font-size: 16px;
+}
+#create_fleet h2{
+	letter-spacing: 5px;
+}
+#create_fleet .form-group{
+	margin-top: 30px;
+}
+#create_fleet input[type=submit]{
+	font-size: 24px;
+	height: 50px;
+	margin-top: 30px;
+}
+/*车队管理员*/
+.dri_admin{
+	margin-top: 180px;
+}
+.dri_admin .list-group{
+	margin-top: 90px;
+}
+.dri_admin .list-group a{
+	line-height: 60px;font-size: 24px;text-align: center;border: none;background: #fbfcfc;
+}
+.dri_admin .col-md-10 ul li{
+	padding: 0px;
+}
+.dri_admin .col-md-10 .col-md-2 img{
+	margin-top: 100px;
+	height: 250px;
+}
+.dri_admin #fleet_info ul{
+	margin-top: 80px;
+}
+.dri_admin #fleet_info li{
+	list-style: none;
+	line-height: 50px;
+}
+.dri_admin ul li a:hover{
+	border-top-right-radius: 40px;
+	font-size: 24px;
+	color: #FFFFFF;
+	background: #37c8ec;
+	border: 1px solid #bfbfbf;
+}
+.dri_admin ul li a{
+	border-top-right-radius: 40px;
+	font-size: 24px;
+	color: #000000;
+	background: #FFFFFF;
+	border: 1px solid #bfbfbf;
+}
+.dri_admin .adm_show ul li{
+	font-weight: bold;
+	font-size: 16px;
+}
+.dri_admin .adm_show ul li span{
+	font-weight: normal;
+}
+.dri_admin .adm_show ul li button{
+	font-size: 16px;
+}
+.dri_admin .adm_show .form-group{
+	margin-top: 30px;
+}
+.dri_admin .adm_show .form-horizontal{
+	margin-top: 80px;
+}
+.dri_admin input[type=submit]{
+	height: 50px;
+	font-size: 24px;
+	margin-top: 40px;
+}
+.dri_admin .order_info {
+	margin-top: 100px;
+}
+/*弹出框*/
+#left_fleet .modal-body{
+	padding-top: 60px;
+	padding-bottom: 82px;
+	height: 200px;
+}
+#left_fleet .modal-body img{
+	margin-bottom: -40px;
+}
+#left_fleet .modal-body span{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 50px;
+}
+#left_fleet .modal-body button{
+	width: 100px;
+	margin:0px 20px 40px;
+}
+.uploadimg{
+	margin-top: 100px;
+	height: 300px;
+}
+
+[v-cloak]{
+	display: none;
+}
+.order-table-nav li p{
+	cursor: pointer;
+	line-height: 36px;
+	-webkit-border-radius: 8px 8px 0 0 ;
+	-moz-border-radius: 8px 8px 0 0 ;
+	border-radius: 8px 8px 0 0 ;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.order-table-nav li p:hover{
+	background-color: #00a2d4;
+	color: #fff;
+}
+.order-table-nav li.active p{
+	background-color: #00a2d4;
+	color: #fff;
+}
+#order-table .form-control{
+	margin: 16px 0 12px;
+}
+.layer-alert-container{
+	padding: 20px;
+}
+.layer-alert-content h3{
+	text-align: center;
+}

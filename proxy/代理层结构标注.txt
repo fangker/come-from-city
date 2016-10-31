@@ -1,0 +1,1 @@
+logAndRegPorxy(注册登陆模型代理)——包含封装regA用户，regB车主 

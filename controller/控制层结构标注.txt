@@ -1,0 +1,3 @@
+restful - Restful控制
+loginAndRegister(登录注册控制) —— 用户注册单元A为用户，B为车主。
+pageShow(主页及单页显示控制) ——— index页面及单页控制。

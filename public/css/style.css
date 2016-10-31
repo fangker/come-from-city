@@ -1,0 +1,519 @@
+body{
+	font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+	margin: 0px;
+	padding: 0px;
+}
+a:hover{
+	text-decoration: none;
+}
+/*导航*/
+#nav{
+	background: #FFFFFF;
+}
+.navbar-header a img{
+	width: 100px;
+}
+.navbar-toggle{
+	width: 45px;
+	height: 45px;
+	margin-top: 10px;
+}
+.navbar-brand{
+	padding: 10px;
+}
+.navbar-brand img{
+	width: 130px;
+	height: 54px;
+	padding: 0px;
+}
+.navbar-nav{
+	font-size: 18px;
+	padding: 15px;
+	padding-top: 12px;
+	background: #FFFFFF;
+}
+.navbar-nav li{
+	margin-right: 10px;
+}
+.navbar-default{
+	background: #fff;
+	border: none;
+	box-shadow: 0px 2px 8px 0px rgba(50,50,50,0.25);
+}
+.dropdown-menu{
+	font-size: 18px;
+}
+/*底部导航*/
+#footer .col-md-2 h3{
+	margin-bottom: 30px;
+}
+#footer .col-md-2 small{
+	display: block;
+	margin-bottom: 10px;
+	color: #CCCCCC;
+}
+#footer .col-md-2 p{
+	text-align: center;
+	word-wrap:break-word; word-break:break-all;
+}
+#footer .col-md-2 p a{
+	color: #CCCCCC;
+}
+#footer{
+	background: #222222;
+	color: #fff;
+	font-size: 16px; 
+	font-weight: 700;
+	padding-top: 40px;
+}
+#footer img{
+	width: 60%;
+	height: 60%;
+}
+#copyright{
+	margin-top: 20px;
+}
+#copyright p{
+	color: #CCCCCC;
+}
+/*首页*/
+#carousel-example-generic .carousel-inner .item section{
+	height: 800px;
+	width: 100%;
+}
+#carousel-example-generic .main div{
+	margin-top: 200px;
+}
+#carousel-example-generic .main div div{
+	color: #fff;
+	margin-bottom: 40px;
+}
+#carousel-example-generic .main div div h4{
+	margin-top: 20px;
+	font-size: 34px;
+}
+#carousel-example-generic .row button{
+	padding: 12px 60px;
+	font-size: 22px; 
+	font-weight: 600;
+	background: inherit;
+	color: #FFFFFF;
+}
+#carousel-example-generic .title{
+	padding-bottom: 25px;
+	border-bottom: 2px solid rgba(255,255,255,.5);
+}
+#carousel-example-generic .title p{
+	font-size: 40px;
+	font-weight: 100;
+}
+#carousel-example-generic .title strong{
+	letter-spacing: 5px;
+	font-size: 56px;
+}
+#advantage{
+	background: #FFFFFF;
+}
+#advantage .row .col-md-12{
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+#advantage .row .col-md-12 h2{
+	color: #33B1C8;
+	letter-spacing: 5px;
+}
+#advantage .row .col-md-12 p{
+	color: #888;
+	line-height: 48px;
+	font-size: 20px;
+}
+#advantage .row .col-md-3 p{
+	font-size: 18px;
+}
+#advantage hr{
+	margin-top: 100px;
+}
+#provide{
+	min-height: 600px;
+	background: #FFFFFF;
+}
+#provide .row .col-md-8{
+	padding-top: 50px;
+}
+#provide .row .col-md-8 h2{
+	color: #33B1C8;
+	letter-spacing: 5px;
+}
+#provide .administration{
+	color: #888;
+	line-height: 48px;
+	font-size: 20px;
+}
+#provide #customer{
+	margin: 60px 0px;
+}
+#provide #customer img{
+	margin: 0px auto;
+}
+#advantage .img-responsive{
+	margin: 0px auto;
+}
+#provide .row .col-md-8 .col-md-12{
+	line-height: 36px;
+}
+#provide #fleet{
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+#provide #fleet .red{
+	color: #c4141b;
+	font-size: 26px;
+}
+#provide #fleet p{
+	font-size: 20px;
+}
+#app{
+	padding-top: 50px;
+	margin-bottom: 50px;
+}
+#app .row{
+	margin-bottom: 50px;
+}
+#app .row h2{
+	color: #33B1C8;
+	letter-spacing: 5px;
+}
+#app .row .col-md-4{
+	padding-top: 20px;
+}
+#app .row .col-md-4 address{
+	color: #222222;
+}
+#app .row .col-md-4 address p{
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+#app .row .col-md-4 .btn-info{
+	margin-bottom: 20px;
+	letter-spacing: 5px;
+}
+#app .row .col-md-4 .btn-danger{
+	letter-spacing: 5px;
+}
+#app .row .col-md-3 p{
+	font-size: 20px;
+	letter-spacing: 5px;
+}
+/*司机注册*/
+#bg .container-fluid{
+	margin-top: 60px;
+}
+#bg .container-fluid .row div{
+	height: 220px;
+	background: url(../img/register_bg.jpg) no-repeat;
+}
+#reg_dri{
+	min-height: 471px;
+}
+#reg_dri .col-md-8{
+	margin-top: -200px;
+}
+#reg_dri .col-md-8 h1{
+	letter-spacing: 8px;
+	font-size: 42px;
+	text-shadow: -1px 1px 0px #999999;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin-bottom: 36px;
+}
+#reg_dri form{
+	padding: 40px 50px 50px 140px;
+	background: #FFFFFF;
+	border-radius: 20px;
+}
+#reg_dri form h4{
+	color: #999999;
+	margin-bottom: 20px;
+}
+#reg_dri form input{
+	height: 44px;
+	letter-spacing: 3px;
+}
+#reg_dri form input[type=checkbox]{
+	margin-left: -14px;
+	margin-top: 0px;
+	height: 12px;
+	width: 12px;
+}
+#reg_dri .col-md-3 div div{
+	width: 126px;
+	height: 165px;
+	margin-top: -50px;
+}
+#reg_dri .col-md-3 div div img{
+	width: 126px;
+	height: 126px;
+}
+#reg_dri .col-md-3 div div p{
+	color: #999999;
+}
+.prompt p{
+	line-height: 25px;
+	color: #FF1100;
+	margin-left: -30px;
+	margin-top: 8px;
+	display: none;
+	text-indent: 1em;
+}
+.verification div{
+	margin-bottom: 10px;
+}
+#obtain a{
+	height: 55px;
+	line-height: 30px;
+}
+/*注册成功*/
+#reg_success{
+	padding-top: 140px;
+	padding-bottom: 131px;
+}
+#reg_success .row .col-md-5{
+	margin-top: 140px;
+}
+#reg_success .row .col-md-6{
+	font-size: 45px;
+	line-height: 70px;
+}
+#reg_success #login_immed{
+	margin-top: 60px;
+}
+#reg_success #login_immed button{
+	border: 1px solid #5982e9;
+	background: #FFFFFF;
+	color: #5982e9;
+	font-size: 32px;
+}
+/*登录*/
+#login{
+	min-height: 521px;
+}
+#login .container{
+	margin-top:120px;
+}
+#login .col-md-8 h1{
+	text-shadow: -1px 1px 0px #999999;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin-bottom: 36px;
+}
+#login form{
+	background: #FFFFFF;
+	border-radius: 20px;
+	padding:40px 60px 120px 60px;
+}
+#login form h4{
+	color: #999999;
+	margin-bottom: 20px;
+	letter-spacing: 5px;
+}
+#login form .form-group{
+	margin-top: 30px;
+}
+#login form input{
+	height: 44px;
+}
+#login form input[type=submit]{
+	height: 44px;
+	margin-top: 20px;
+}
+/*联系我们*/
+#contact{
+	background: url(../img/contact-bg.png) no-repeat;
+	background-size: cover;
+	color: #fff;
+	margin-top: 60px;
+	min-height: 560px;
+}
+.lvjing{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	padding: 109px 0px;
+	min-height: 570px;
+}
+#contact h2{
+	font-weight: bold;
+	margin-bottom: 25px;
+	margin-top: 0px;
+	letter-spacing: 5px;
+}
+#contact p{
+	margin-bottom: 20px;
+	line-height: 25px;
+	font-size: 16px;
+}
+#contact .form-control {
+    border: none;
+    margin-bottom: 20px;
+    height: 50px;
+}
+#contact textarea.form-control{
+	height: auto;
+}
+#contact input[type=submit]{
+	background: #40d2b1;
+	border: 1px solid #40D2B1;
+	color: #fff;
+	font-weight: bold;
+}
+#contact input[type=submit]:hover{
+	background: #5AD7BA;
+}
+/*车队介绍*/
+#use_app{
+	margin-top: 70px;
+	padding: 100px 0px 20px 0px;
+}
+#use_app .row .col-md-8{
+	color: #282828;
+}
+#use_app .row .col-md-8 p{
+	font-size: 20px;
+	margin: 1.5em 0 2em;
+	line-height: 50px;
+}
+#use_app .row .col-md-8 p a{
+	padding-left: 50px;
+}
+#use_app .row .col-md-8 p a button{
+	color: #fff;
+	border: 1px solid #1dc9b1;
+	background: #1dc9b1;
+}
+.carousel-indicators .active {
+	margin: 0px 5px -20px 5px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #1dc9b1;
+    background: #1dc9b1;
+}
+.carousel-indicators li{
+	margin: 0px 5px -20px 5px;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #c6c6c6;
+}
+.carousel-inner img{
+	margin: 0px auto;
+}
+#use_app .row .col-md-4 p a span{
+	font-size: 32px;
+	color: #1dc9b1;
+}
+#why{
+	background: #F7F7F7;
+	padding: 100px 0px;
+}
+#why .row .col-md-8 p{
+	font-size: 20px;
+	margin: 1.5em 0 2em;
+	line-height: 50px;
+	text-indent: 2em;
+}
+#why .row .col-md-8 p a{
+	color: #1bbaa2;
+}
+#admin{
+	padding: 100px 0px;
+}
+#admin .row .col-md-8 p{
+	font-size: 20px;
+	margin: 1.5em 0 2em;
+	line-height: 50px;
+	text-indent: 2em;
+}
+#admin .row .col-md-8 p a{
+	color: #1bbaa2;
+}
+/*司机端下载*/
+#dri{
+	width: 100%;
+	height: 100%;
+}
+#dri_bg{
+	background: url(../img/dri_bg.jpg) center 100%;
+	padding-top: 80px;
+	padding-bottom: 100px;
+	color: #FFFFFF;
+}
+#dri_title{
+	margin-bottom: 20px;
+	margin-top: 30px;
+}
+#dri_title h2{
+	font-size: 50px;
+	letter-spacing: 20px;
+}
+#dri_bg .col-md-6 h1{
+	line-height: 70px;
+	margin-top: 40px;
+}
+#dri_bg .col-md-6 h3{
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+#dri_bg button{
+	height: 50px;
+	font-size: 20px;
+}
+#dri_bg img{
+	width: 50%;
+	height: 50%;
+}
+#dri_advantage .col-md-12{
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+#dri_advantage .col-md-12 h2{
+	color: #33B1C8;
+	letter-spacing: 5px;
+}
+#dri_advantage .col-md-12 p{
+	color: #888;
+	line-height: 48px;
+	font-size: 20px;
+	letter-spacing: 5px;
+}
+#dri_advantage .col-md-4 p{
+	font-size: 18px;
+}
+#dri_advantage hr{
+	margin-top: 100px;
+}
+/*司机信息*/
+.dri_info{
+	margin-top: 100px;
+}
+.list{
+	margin-bottom: 40px;
+	margin-top: 30px;
+}
+.list ul{
+	padding-right: 0px;
+}
+.list ul li{
+	padding: 0px;
+}
+.dri_info .form-group{
+	margin-top: 30px;
+}
+.dri_info input[type=submit]{
+	font-size: 24px;
+	height: 50px;
+	margin-top: 30px;
+}
+.green input{
+	font-size: 24px;
+	height: 50px;
+	margin-top: 30px;
+}

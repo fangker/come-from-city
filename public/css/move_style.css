@@ -1,0 +1,190 @@
+ /*reset 重置*/
+body,ul,ol,p,h1,h2,h3,h4,h5,dl,dd,form,input,textarea,
+td,th,button,strong,em,select,video,canvas{margin:0;padding:0;}
+li{list-style:none;vertical-align:top;}
+table{ border-collapse:collapse;}
+textarea{resize:none;overflow:auto;}
+img{ border:none; vertical-align:middle;}
+em{ font-style:normal;}
+a{ text-decoration:none;}
+a,input{
+-webkit-appearance: none;/*屏蔽阴影*/
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+/*ios android去除自带阴影的样式*/
+}
+a, img {
+/* 禁止长按链接与图片弹出菜单 */
+-webkit-touch-callout: none; 
+ 
+}
+html, body {
+/* 禁止选中文本(如无文本选中需求,此为必选项) */
+-webkit-user-select: none;  
+user-select: none;
+}
+/*public*/
+html {
+font-size : 20px;
+}
+@media only screen and (min-width: 401px){
+html {
+font-size: 25px !important;
+}
+}
+@media only screen and (min-width: 428px){
+html {
+font-size: 26.75px !important;
+}
+}
+@media only screen and (min-width: 481px){
+html {
+font-size: 30px !important; 
+}
+}
+@media only screen and (min-width: 569px){
+html {
+font-size: 35px !important; 
+}
+}
+@media only screen and (min-width: 641px){
+html {
+font-size: 40px !important; 
+}
+}
+body{font-family: "Helvetica Neue", Helvetica, "STHeiTi", sans-serif; 
+overflow-x:hidden; overflow-y:auto; font-size:0.7rem;
+}
+.clear{zoom:1;}
+.clear:after{content:''; display:block; clear:both;}
+.fl{float:left;}
+.fr{float:right;}
+.viewport{ max-width:640px; margin:0 auto; overflow-x:hidden;}
+.right{text-align: right;}
+/**/
+
+/*头部*/
+#head{
+	background: url(../img/head.png) no-repeat; 
+	background-size: 100%;
+	width: 100%;
+	height: 260px;
+}
+
+/**/
+#coupon{
+	background: #FFEA47;
+	width: 100%;
+}
+#coupon_top{
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+
+
+#coupon_red {
+	height: 120px;
+}
+#font{
+	text-align: center;
+	position: relative;
+	top: 20px;
+	left: 10%;
+	width: 80%;
+	color: #FF9426;
+	line-height: 2rem;
+	letter-spacing: 5px;
+	font-family: '微软雅黑';
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+#coupon_top img{
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 50px;
+}
+#coupon_time{
+	position: relative;
+	top: -94px;
+	left: 34%;
+	font-size: 0.4rem;
+}
+#coupon_price{
+	position: relative;
+	top: -82px;
+	left: 22%;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+#coupon_condition{
+	position: relative;
+	top: -75px;
+	left: 24%;
+	font-size: 0.6rem;
+}
+#coupon_font{
+	position: absolute;
+	left: 19%;
+	top: 130px;
+	font-weight: bold;
+	width: 62%;
+}
+#coupon_times{
+	padding-left: 3%;
+}
+#coupon_bg{
+	position: absolute;
+	color: #ef9237;
+	display: none;
+}
+#coupon_img{
+	margin-top: -50px;
+}
+#receive{
+	margin-top: -30px;
+}
+#receive div{
+	width: 80%;
+	margin-left: 15%;
+}
+#receive input[type=text]{
+	width: 85%;
+	border-radius: 18px;
+	height: 40px;
+	background: #fff;
+	border:none;
+	text-align: center;
+	color: #BCBCBC;
+	font-size: 0.8rem;
+	margin-bottom: 20px;
+}
+button{
+	width: 85%;
+	border-radius: 18px;
+	height: 40px;
+	background: #EE6D00;
+	border:none;
+	text-align: center;
+	color: #fff;
+	font-size: 0.8rem;
+	margin-bottom: 20px;
+}
+#middle{
+	background: url(../img/middle.png) no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 68px;
+}
+#footer{
+	width: 100%;
+	background: #FFBA26;
+	padding-top: 20px;
+	color: #FFD99B;
+}
+#footer div{
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 90%;
+	font-size: 0.7rem;
+	line-height: 1.5rem;
+}

@@ -1,0 +1,127 @@
+extends menu
+block content1
+    div
+        .row
+            .col-md-1
+        if(message)
+            .col-md-10.text-center
+                .alert.alert-success(role='alert') #{message}
+        .row.list
+            .col-md-1
+            .col-md-10
+                p
+                    b |
+                    | 				个人信息
+                ul.nav.nav-tabs.text-center
+                    li.col-md-4(class=(blockplay==1||blockplay==undefined||blockplay==null ?'active':false),style='margin-bottom: 0px;')
+                        a(href='#') 司机信息
+                    li.col-md-4(class=(blockplay==2?'active':false),style='margin-bottom: 0px;')
+                        a(href='#') 驾驶证信息
+                    li.col-md-4(class=(blockplay==3?'active':false),style='margin-bottom: 0px;')
+                        a(href='#') 车辆照片上传
+                .dri_photo(style="display:"+(blockplay==1|| blockplay==undefined?'block':'none'))
+                    form.form-horizontal(action='/profile/info', method='post', style='padding-top: 30px;')
+                        .form-group
+                            label.col-md-2.control-label.col-md-offset-2(for='car_name') 司机姓名
+                            .col-md-6
+                                if(username)
+                                    input#car_name.form-control(type='text', placeholder='', name='username',value='#{username}')
+                                else
+                                    input#car_name.form-control(type='text', placeholder='补全姓名', name='username')
+                        .form-group
+                            label.col-md-2.control-label.col-md-offset-2(for='car_sex') 司机性别
+                            .col-md-6
+                                .radio
+                                    if(driversex==1)
+                                        label.col-md-6
+                                            input#optionsRadios1(type='radio', name='sex', value='1',checked='checked')
+                                            | 							    	 男
+                                        label.col-md-6
+                                            input#optionsRadios2(type='radio', name='sex', value='2')
+                                            | 							    女
+                                    else if(driversex==0)
+                                        label.col-md-6
+                                            input#optionsRadios2(type='radio', name='sex', value='1')
+                                            |                                     男
+                                        label.col-md-6
+                                            input#optionsRadios2(type='radio', name='sex', value='2',checked='checked')
+                                            |                              女
+                        .form-group
+                            label.col-md-2.control-label.col-md-offset-2(for='car_ID') 身份证号
+                            .col-md-6
+                                input#car_ID.form-control(type='text', placeholder='请输入司机身份证号', name='driveridentity',value='#{driveridentity}')
+                        .form-group
+                            label.col-md-2.control-label.col-md-offset-2(for='car_type') 车辆类型
+                            .col-md-6
+
+                                select.form-control(name='drivertype')
+                                    option(value='3',selected=(drivertype=='3'?'true':false))  小轿车(上限4人包括驾驶员)
+                                    option(value='6',selected=(drivertype=='6'?'true':false)) 运动型多用途汽车(上线人数7人包括驾驶员)
+                                    option(value='7',selected=(drivertype=='7'?'true':false)) 面包车(上线人数8人包括驾驶员)
+                        .form-group
+                            label.col-md-2.control-label.col-md-offset-2(for='car_number') 车牌号
+                            .col-md-6
+                                if(drivernumber)
+                                    input#car_number.form-control(type='text', value='#{drivernumber}', name='drivernum')
+                                else
+                                    input#car_number.form-control(type='text', placeholder='请输入车牌号', name='drivernum')
+                        .form-group
+                            .col-md-8.col-md-offset-2
+                                input.form-control.btn.btn-info(type='submit', value='更新司机信息')
+                .row.dri_photo(style="display:"+(blockplay==2?'block':'none'))
+                    .col-md-1
+                    .col-md-10
+                        if(driverlicense)
+                            img.col-md-12.img-responsive.uploadimg(src='tmp/'+driverlicense)
+                        else
+                            img.col-md-12.img-responsive.uploadimg(src='img/license.jpg')
+                        .control-group.col-md-12(style='padding-top: 30px;')
+                            input#dri_license.file-loading(name='dri_license', type='file', multiple='')
+                            #errorBlock.help-block
+                        .col-md-10.col-md-offset-1
+                            a(href="/profile/newlicense")
+                                input.form-control.btn.btn-info(type='submit', value='完善驾驶证信息', style='margin-top: 50px;')
+                    .col-md-1
+                -console.log(blockplay)
+                .row.dri_photo(style="display:"+(blockplay==3?'block':'none'))
+                    .col-md-1
+                    .col-md-10
+                        if(driverphoto)
+                            img.col-md-12.img-responsive.uploadimg(src='tmp/'+driverphoto)
+                        else
+                            img.col-md-12.img-responsive.uploadimg(src='img/photo.jpg')
+                    .control-group.col-md-12(style='padding-top: 30px;')
+                        input#car_photo.file-loading(name='car_photo', type='file', multiple='')
+                        #errorBlock.help-block
+                    .col-md-10.col-md-offset-1
+                        a(href="/profile/newphoto")
+                            input.form-control.btn.btn-info(type='submit', value='完善车辆信息', style='margin-top: 50px;')
+                    .col-md-1
+            .col-md-1
+        script(type='text/javascript', src='js/jquery.js')
+        script.
+            $(function(){
+                $('#dri_license').fileinput({
+                    uploadUrl: '/profile/license', // you must set a valid URL here else you will get an error
+                    allowedFileExtensions : ['jpg', 'png','gif'],
+                    overwriteInitial: false,
+                    maxFileSize: 1000,
+                    maxFilesNum: 10,
+                    maxFileCount:1
+                });
+                $('#car_photo').fileinput({
+                    uploadUrl: '/photo/profile', // you must set a valid URL here else you will get an error
+                    allowedFileExtensions : ['jpg', 'png','gif'],
+                    overwriteInitial: false,
+                    maxFileSize: 1000,
+                    maxFilesNum: 10,
+                    maxFileCount:1
+                });
+                $('.nav-tabs li').click(function(){
+                    $('.nav-tabs li').removeClass('active');
+                    $('.nav-tabs li').eq($(this).index()).addClass('active');
+                    $('.dri_photo').css('display','none');
+                    $('.dri_photo').eq($(this).index()).css('display','block');
+                });
+            });
+include driverfoot

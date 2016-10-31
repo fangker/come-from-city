@@ -1,0 +1,42 @@
+
+extends layout
+
+block content
+    body
+        nav.navbar.navbar-default.navbar-fixed-top
+            .container
+                .row
+                    .col-md-12
+                        .navbar-header
+                            button.navbar-toggle(data-toggle='collapse', data-target='.navbar-collapse')
+                                span.icon-bar
+                                span.icon-bar
+                                span.icon-bar
+                            a.navbar-brand(href='#')
+                                img(src='/img/logo.png')
+                        .navbar-collapse.collapse
+                            ul.navbar-nav.navbar-right.nav
+                                li
+                                    a(href='/') 首页
+                                  if(user==undefined)
+                                    li
+                                        a(href='/login') 登录
+                                li
+                                    a(href='/profile') 管理面板
+                                li
+                                    a(href='/apidoc') API文档
+
+
+                                li
+                                    a(href='/link') 联系我们
+                                li
+                                    if (username)
+                                        a(href='#html5') 用户: #{username}
+                                    else if(user)
+                                        a(href='#html5') 用户: #{user}
+                                li
+                                    if (user)
+                                      a(href='/drop') 退出
+
+
+

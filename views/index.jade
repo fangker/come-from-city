@@ -1,0 +1,137 @@
+include  header
+block content
+    body
+        #carousel-example-generic.carousel.slide(data-ride='carousel')
+            // Indicators
+            ol.carousel-indicators
+                li.active(data-target='#carousel-example-generic', data-slide-to='0')
+                li(data-target='#carousel-example-generic', data-slide-to='1')
+            // Wrapper for slides
+            .carousel-inner(role='listbox')
+                .item.active
+                    section(style='background: url(img/bg.png) center no-repeat;background-size:cover;')
+                        .container-fluid
+                            .row
+                                .col-md-4
+                                .col-md-4.text-center.main
+                                    div
+                                        div
+                                            .title
+                                                p.text-center To And From Cities
+                                                strong 城来城往
+                                            h4 您城际出行的好伙伴
+                                    button.btn.btn-primary(type='button', style='') 了解详细信息
+                                .col-md-4
+                .item
+                    section(style='background: url(img/bg_1.jpg) center no-repeat;background-size:cover;')
+                        .container-fluid
+                            .row
+                                .col-md-4
+                                .col-md-4.text-center.main
+                                    div
+                                        div
+                                            .title
+                                                p.text-center To And From Cities
+                                                strong 城来城往
+                                            h4 为您的城际出行保障安全
+                                    button.btn.btn-primary(type='button') 加入我们
+                                .col-md-4
+            // Controls
+            a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+                span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                span.sr-only Previous
+            a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+                span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                span.sr-only Next
+        // 轮播图
+        // 项目优势
+        section#advantage
+            .container
+                .row
+                    .col-md-12
+                        h2.text-center 项目优势
+                        p.text-center 我们追求方便用户、高效管理的原则
+                .row
+                    .text-center
+                        .col-md-3.col-sm-6.wow.flipInY
+                            a(href='#', target='_blank')
+                                img.img-responsive.wow.flipInY(src='img/BG_1.png', alt='')
+                                h3 O2O平台
+                                p 互联网+城际运输O2O平台
+                        .col-md-3.col-sm-6.wow.flipInY
+                            a(href='#', target='_blank')
+                                img.img-responsive.wow.flipInY(src='img/BG_2.png', alt='')
+                                h3 自动化运营模式
+                                p 自动完成订单的推送，提高效率
+                        .col-md-3.col-sm-6.wow.flipInY
+                            a(href='#', target='_blank')
+                                img.img-responsive.wow.flipInY(src='img/BG_3.png', alt='')
+                                h3 车队统一化管理
+                                p 通过车队创建，司机加入来管理
+                        .col-md-3.col-sm-6.wow.flipInY
+                            a(href='#', target='_blank')
+                                img.img-responsive.wow.flipInY(src='img/BG_4.png', alt='')
+                                h3 全面的安全保障
+                                p 车队司机实名认证，保障安全
+                hr
+        // 项目优势
+        // 提供方便
+        section#provide
+            .container
+                .row
+                    .col-md-2
+                    .col-md-8.text-center
+                        h2 我们怎样提供优质服务
+                        p.administration 通过管理车队，保证用户能够方便的到达目的地
+                        #customer.col-md-12
+                            .col-md-2
+                            .col-md-8
+                                img.img-responsive(src='img/customer.jpg')
+                            .col-md-2
+                        .col-md-12
+                            .col-md-5.text-center.col-xs-12
+                                p 客户可以查看车队的信用，选择下单
+                                p 客户通过APP下单到车队，车队安排接送
+                                p 完成拼单后，第一时间返回给客户订单信息
+                            .col-md-2.col-xs-12
+                                p |
+                                p |
+                                p |
+                            .col-md-5.text-center.col-xs-12
+                                p 司机通过加入车队，统一管理
+                                p 实行自动化的运行模式，方便快捷
+                                p 由车队分配订单，不用让您在出去接单
+                        #fleet.col-md-12
+                            p.red 车队化统一管理
+                            p 我们通过管理车队，保证用户能够方便的到达目的地
+                    .col-md-2
+                hr
+        // 提供方便
+        // 保持联系
+        section#app
+            .container
+                .row
+                    h2.text-center 与我们保持联系
+                .row
+                    .col-md-4.text-left
+                        address
+                            p
+                                span.glyphicon.glyphicon-home
+                                |  地址:山东省济南市章丘大学城文化路888号
+                            p
+                                span.glyphicon.glyphicon-phone-alt
+                                |  联系电话:0531—83118771
+                            p
+                                span.glyphicon.glyphicon-envelope
+                                |  邮箱:328675698@qq.com
+                        a.btn.btn-lg.btn-block.btn-info(href='#') 立即下载用户端
+                        a.btn.btn-lg.btn-block.btn-danger(href='#') 立即下载司机端
+                    .col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1.col-xs-6.text-center
+                        div
+                            img.img-responsive(src='img/erwei.jpeg')
+                        p 立即注册用户端
+                    .col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-2.col-xs-6.text-center
+                        div
+                            img.img-responsive(src='img/erwei.jpeg')
+                        p 立即注册司机端
+include footer

@@ -1,0 +1,85 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 创建车队
+        link(rel='stylesheet', type='text/css', href='css/style1.css')
+        link(rel='stylesheet', type='text/css', href='css/bootstrap.min.css')
+        link(rel='stylesheet', type='text/css', href='css/style_h.css')
+        link(rel='stylesheet', type='text/css', href='css/webuploader.css')
+    body
+        // 车队创建
+        section#create_fleet
+            .container
+                .row
+                    .col-md-6.col-md-offset-3.text-center
+                        h2 车队的基本信息设置
+                        hr
+                .row
+                    .col-md-3
+                    .col-md-6
+                        form.form-horizontal(action='#', method='get', name='')
+                            .form-group
+                                label.col-md-2.control-label(for='title') 车队名称
+                                .col-md-10
+                                    input#car_title.form-control(type='text', placeholder='请输入车队名称', name='')
+                            .form-group
+                                label.col-md-2.control-label(for='car_select') 起始城市
+                                #car_select.col-md-10
+                                    select.form-control(name='')
+                                        option(value='') 章丘
+                                        option(value='') 章丘
+                                        option(value='') 章丘
+                                        option(value='') 章丘
+                                        option(value='') 章丘
+                            .form-group
+                                label.col-md-2.control-label(for='car_select') 结束城市
+                                #car_select.col-md-10
+                                    select.form-control(name='')
+                                        option(value='') 章丘
+                                        option(value='') 章丘
+                                        option(value='') 章丘
+                                        option(value='') 章丘
+                                        option(value='') 章丘
+                            .form-group
+                                label.col-md-2.control-label(for='car_in') 订单分配
+                                .col-md-10
+                                    .radio
+                                        label.col-md-6.text-left
+                                            input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
+                                            | 								    	自动分配订单模式
+                                        label.col-md-6.text-right
+                                            input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+                                            | 								    	手动分配订单模式
+                            .form-group
+                                label.col-md-2.control-label(for='car_in') 车队介绍
+                                .col-md-10
+                                    textarea#car_in.form-control(placeholder='请输入车队介绍', rows='4', name='')
+                            .form-group
+                                label.col-md-2.control-label(for='wrapper') 车队图片
+                                .col-md-10
+                                    #wrapper
+                                        #container
+                                            #uploader
+                                                .queueList
+                                                    #dndArea.placeholder
+                                                        #filePicker
+                                                        p(style='margin-bottom: 40px;') 或将照片拖到这里
+                                                .statusBar(style='display:none;')
+                                                    .progress
+                                                        span.text 0%
+                                                        span.percentage
+                                                    .info
+                                                    .btns
+                                                        #filePicker2
+                                                        .uploadBtn 开始上传
+                            .col-md-10.col-md-offset-2
+                                input.form-control.btn.btn-info(type='submit', value='创 建 车 队', name='')
+                    .col-md-3
+        // 车队创建
+        script(type='text/javascript', src='js/jquery.js')
+        script(type='text/javascript', src='js/bootstrap.min.js')
+        script(type='text/javascript', src='js/webuploader.js')
+        script(type='text/javascript', src='js/upload.js')
